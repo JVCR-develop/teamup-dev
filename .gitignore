@@ -1,0 +1,243 @@
+# ============================================
+# ИНФРАСТРУКТУРА И ОКРУЖЕНИЕ
+# ============================================
+
+# Секреты и конфиденциальные данные
+.env
+.env.local
+.env.production
+.env.development
+*.pem
+*.key
+*.crt
+*.p12
+secrets/
+credentials.json
+service-account-key.json
+
+# IDE и редакторы
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+*.code-workspace
+.project
+.classpath
+.settings/
+.factorypath
+
+# Временные файлы
+*.log
+*.tmp
+*.temp
+*.cache
+*.pid
+*.seed
+*.pid.lock
+tmp/
+temp/
+logs/
+*.db-journal
+
+# Системные файлы
+*.dll
+*.exe
+*.msi
+*.dmg
+*.pkg
+*.deb
+*.rpm
+
+# ============================================
+# БЭКЕНД (Python)
+# ============================================
+
+# Виртуальное окружение
+venv/
+env/
+ENV/
+.venv/
+virtualenv/
+*.py[cd]
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Установленные пакеты (но мы используем requirements, поэтому папки не храним)
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+dist/
+build/
+
+# БД и миграции (миграции храним, но не базы)
+*.sqlite3
+*.db
+local.db
+*.sql
+*.sql.gz
+alembic/versions/README  # Не храним README, только миграции
+
+# Тесты и отчеты
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.hypothesis
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ============================================
+# ФРОНТЕНД (HTML/CSS/JS)
+# ============================================
+
+# Зависимости (не храним node_modules!)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+lerna-debug.log*
+
+# Сборка и дистрибутивы
+dist/
+build/
+*.js.map
+*.css.map
+*.min.*
+out/
+.next/
+
+# Тесты фронтенда
+coverage/
+.nyc_output/
+
+# env для фронта (отдельно от корневых)
+.frontend.env
+.frontend.env.local
+
+# ============================================
+# DS СЕРВИС (Jupyter/ML)
+# ============================================
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+!*.ipynb  # Если хочешь хранить ноутбуки - раскомментируй
+jupyter_notebook_config.py
+jupyter_config.py
+
+# ML модели (не храним тяжелые модели в гите)
+*.pkl
+*.h5
+*.keras
+*.pb
+*.onnx
+*.joblib
+models/
+!models/README.md  # Храним только README в папке models
+
+# Данные для обучения (не храним большие данные)
+data/
+*.csv
+*.xlsx
+*.parquet
+*.feather
+*.npy
+*.npz
+*.hdf5
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# ============================================
+# ДОКУМЕНТАЦИЯ И ДИЗАЙН
+# ============================================
+
+# Figma (только ссылки, не файлы)
+*.fig
+*.figma
+*.sketch
+*.psd
+*.ai
+!docs/design/figma-links.md  # Храним только ссылки
+
+# PDF и изображения (если они не являются частью дизайн-системы)
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg  # SVG обычно храним, но если тяжелые - исключить
+!docs/design/screenshots/  # Можно хранить скриншоты для истории
+!frontend/public/images/  # Ассеты для фронта храним
+
+# ============================================
+# DOCKER (но не всё)
+# ============================================
+
+# Не храним образы и слои
+*.tar
+*.docker
+.dockerignore
+docker-compose.override.yml  # Локальные переопределения
+
+# ============================================
+# ВСЯКИЕ РАЗНОСТИ
+# ============================================
+
+# Логи любых сервисов
+*.log
+logs/
+*.pid
+
+# Бэкапы
+*.bak
+*.backup
+*.old
+
+# Файлы, начинающиеся с точки (кроме важных)
+.*
+!.gitignore
+!.env.example
+!.github/
+!.dockerignore
+!.gitattributes
+!.editorconfig
+
+
+# Для дизайнеров: временные файлы Figma
+*.fig.tmp
+*.figma.bak
+
+# Для аналитика: черновики отчетов
+drafts/
+*.xlsx
+!docs/analytics/final-report.md  # Только финальные отчеты в markdown
+
+# Для бэкендера: тестовые файлы с данными
+test_data/
+seeds/
+*.dump
+
+# Для всех: локальные скрипты (не для продакшна)
+scripts/local/
+*.local.py

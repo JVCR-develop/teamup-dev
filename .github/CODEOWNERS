@@ -1,0 +1,71 @@
+# ============================================
+# Кто за что отвечает (и кто может менять)
+# ============================================
+
+# Глобальные администраторы (могут всё)
+# ------------------------------------------------------------
+* @teamup-dev/pm @teamup-dev/devops
+
+# ============================================
+# Документация и аналитика
+# ============================================
+
+# Общая документация (все читают, но пишут только PM и аналитик)
+/docs/project/ @teamup-dev/pm @teamup-dev/analyst
+/docs/analytics/ @teamup-dev/analyst @teamup-dev/pm
+/README.md @teamup-dev/pm
+
+# Дизайн-документация (дизайнеры, фронты, PM)
+/docs/design/ @teamup-dev/designers @teamup-dev/frontend @teamup-dev/pm
+
+# API документация (бэкендер, DevOps, PM)
+/docs/api/ @teamup-dev/backend @teamup-dev/devops @teamup-dev/pm
+
+# ============================================
+# Инфраструктура (только DevOps и PM)
+# ============================================
+
+/infrastructure/ @teamup-dev/devops @teamup-dev/pm
+/docker-compose.yml @teamup-dev/devops @teamup-dev/pm
+/.github/ @teamup-dev/devops @teamup-dev/pm
+
+# ============================================
+# Бэкенд (бэкендер, DevOps, PM)
+# ============================================
+
+/backend/ @teamup-dev/backend @teamup-dev/devops @teamup-dev/pm
+/backend/src/models/ @teamup-dev/backend @teamup-dev/pm  # Модели БД - важная часть
+/backend/src/api/ @teamup-dev/backend @teamup-dev/frontend  # API нужно знать фронтам
+
+# ============================================
+# Фронтенд (фронты, дизайнеры, DevOps, PM)
+# ============================================
+
+# Основной фронтенд (фронты отвечают)
+/frontend/ @teamup-dev/frontend @teamup-dev/devops @teamup-dev/pm
+
+# Токены дизайна (дизайнеры могут править цвета/шрифты)
+/frontend/src/assets/styles/design-tokens.css @teamup-dev/designers @teamup-dev/frontend @teamup-dev/pm
+
+# Компоненты (дизайнеры могут предлагать правки стилей)
+/frontend/src/components/common/ @teamup-dev/frontend @teamup-dev/designers @teamup-dev/pm
+/frontend/src/components/features/ @teamup-dev/frontend @teamup-dev/pm
+
+# Страница дизайн-системы (для дизайнеров)
+/frontend/src/pages/DesignSystem/ @teamup-dev/designers @teamup-dev/frontend @teamup-dev/pm
+
+# Ассеты (картинки, иконки) - дизайнеры загружают сюда
+/frontend/public/images/ @teamup-dev/designers @teamup-dev/frontend @teamup-dev/pm
+
+# ============================================
+# ML сервис (только PM и DevOps)
+# ============================================
+
+/ml-service/ @teamup-dev/pm @teamup-dev/devops
+/notebooks/ @teamup-dev/pm
+
+# ============================================
+# Скрипты (DevOps и PM)
+# ============================================
+
+/scripts/ @teamup-dev/devops @teamup-dev/pm
