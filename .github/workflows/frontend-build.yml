@@ -1,0 +1,30 @@
+name: Frontend Build
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'frontend/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'frontend/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: |
+          cd frontend
+          if [ -f package.json ]; then npm install; fi
+      - name: Build
+        run: |
+          cd frontend
+          if [ -f package.json ]; then npm run build --if-present; fi
