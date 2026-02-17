@@ -5,10 +5,12 @@ on:
     branches: [ main, develop ]
     paths:
       - 'frontend/**'
+      - '.github/**'  # <-- ДОБАВЬ
   pull_request:
     branches: [ main ]
     paths:
       - 'frontend/**'
+      - '.github/**'  # <-- ДОБАВЬ
   workflow_dispatch:
 
 jobs:
@@ -23,8 +25,8 @@ jobs:
       - name: Install dependencies
         run: |
           cd frontend
-          if [ -f package.json ]; then npm install; fi
+          npm install
       - name: Build
         run: |
           cd frontend
-          if [ -f package.json ]; then npm run build --if-present; fi
+          npm run build --if-present

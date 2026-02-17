@@ -5,10 +5,12 @@ on:
     branches: [ main, develop ]
     paths:
       - 'backend/**'
+      - '.github/**'  # <-- ДОБАВЬ ЭТУ СТРОКУ
   pull_request:
     branches: [ main ]
     paths:
       - 'backend/**'
+      - '.github/**'  # <-- И СЮДА
   workflow_dispatch:
 
 jobs:
@@ -23,8 +25,8 @@ jobs:
       - name: Install dependencies
         run: |
           cd backend
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-      - name: Run tests
+          pip install -r requirements.txt
+      - name: Test
         run: |
           cd backend
-          echo "No tests yet"  # Замени на реальные тесты
+          echo "No tests yet"
